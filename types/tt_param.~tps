@@ -1,2 +1,0 @@
-create or replace type tt_param as table of t_param;
-/
