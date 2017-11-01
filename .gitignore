@@ -1,0 +1,2 @@
+*.~*    # temp files of plsql developer
+*.log	# working logs
