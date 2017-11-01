@@ -1,0 +1,40 @@
+create or replace type t_module force as object(
+  ------------------------------------------------------------------ attributes
+  name                            varchar2(100),
+  description                     varchar2(1000),
+  started                         timestamp
+  parent_module                   varchar2(100),
+  parameters                      tt_parameter 
+  c_value                         varchar2(100),
+  n_value                         number,
+  d_value                         date,
+  t_value                         timestamp,
+  ------------------------------------------------------------------ constructors
+  constructor function t_param(
+          ip_name                           varchar2,
+          ip_value                          varchar2) return self as result,
+          
+  constructor function t_param(
+          ip_name                           varchar2,
+          ip_value                          number) return self as result,
+
+  constructor function t_param(
+          ip_name                           varchar2,
+          ip_value                          date) return self as result,
+
+  constructor function t_param(
+          ip_name                           varchar2,
+          ip_value                          timestamp) return self as result,
+  ------------------------------------------------------------------ members
+)
+/
+create or replace type body t_module is
+  
+  -- Member procedures and functions
+  member procedure <ProcedureName>(<Parameter> <Datatype>) is
+  begin
+    <Statements>;
+  end;
+  
+end;
+/
